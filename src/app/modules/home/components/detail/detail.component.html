@@ -1,0 +1,114 @@
+<div class="product-title">
+  <div class="container">
+    <div class="section-title text-left">
+      <h1>{{data.name}}</h1>
+    </div>
+    <div class="row"></div>
+  </div>
+</div>
+<div class="product-view">
+  <div class="container">
+    <div fxLayout="row" fxLayoutGap="15px">
+      <div fxLayout="column" fxFlex="70" class="border-10">
+        <div class="product-banner">
+          <img src="{{url}}/{{data.banner}}" alt="{{data.name}}">
+        </div>
+        <div class="left-section" fxLayout="column">
+          <div class="product-preview">
+            <ul class="list-inline preview-btn text-center" fxLayout="row" fxLayoutAlign="center center">
+              <li class="list-inline-item"><a (click)="goToLink(data.apk_url)">Apk Demo</a></li>
+              <li class="list-inline-item"><a (click)="view()" class="preview-image-popup">Screenshots</a>
+              </li>
+            </ul>
+          </div>
+          <div class="product-descrip" fxFlex>
+            <mat-tab-group>
+              <mat-tab label="Description">
+                <span [innerHtml]="data.description"></span>
+              </mat-tab>
+              <mat-tab label="Additional Information">
+                <span [innerHtml]="data.information"></span>
+              </mat-tab>
+              <mat-tab label="Vendor Infor" layout-fill>
+                <span [innerHtml]="data.vendor"></span>
+              </mat-tab>
+              <mat-tab label="Specification">
+                <span [innerHtml]="data.specification"></span>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+      </div>
+      <div fxFlex="30" class="border-10">
+        <div class="widget-product-details right-section">
+          <div class="product-subdetail text-left">
+            <div class="widget-price">
+              <p class="item-price">
+                <span class="offprice" *ngIf="data.old_price !== undefined"><span class="item-currency"
+                    *ngIf="data.old_price !== undefined">$</span> {{data.old_price}} </span>
+                <span><span class="item-currency">$</span>{{data.price}}</span>
+              </p>
+            </div>
+            <a class="sit-preview" href="#">
+              <img src="{{url}}/{{data.logo}}" alt="Volume Booster | Sound Booster | Android Source Code">
+            </a>
+            <div class="widget-rating">
+            </div>
+            <span [innerHtml]="data.short_description"></span>
+          </div>
+          <ul class="list-inline text-left product-sidebar-stats">
+            <li>
+              <i class="fa fa-shopping-cart"></i>
+              <span>{{data.sale | number: '1.0-0'}} Sales</span>
+            </li>
+            <li>
+              <i class="fa fa-star"></i>
+              <span>{{data.rating}} Ratings</span>
+            </li>
+            <li>
+              <i class="fa fa-eye"></i>
+              <span>{{data.view | number: '1.0-0'}} Views</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="featured list-item">
+  <div class="container">
+    <!-- <div style="padding: 30px; background-color:#fff"> -->
+    <div>
+      <div class="section-title text-center">
+        <h1>Featured Items</h1>
+        <p>High-Quality Source Codes &amp; Graphic Assets!</p>
+      </div>
+      <mat-grid-list cols="3" rowHeight="5:5" gutterSize="25px">
+        <ng-container *ngFor="let item of tops">
+          <mat-grid-tile>
+            <div fxLayout="column" fxFill>
+              <div class="item" fxFlex>
+                <div class="item-image">
+                  <span class="item-label" *ngIf="item.old_price !== undefined">Sale</span>
+                  <a (click)="detail(item.code)">
+                    <img src="{{url}}/{{item.banner}}">
+                  </a>
+                </div>
+                <div class="item-info">
+                  <h3>{{item.name}}</h3>
+                  <p class="item-price">
+                    <span class="offprice" *ngIf="item.old_price !== undefined"><span class="item-currency"
+                        *ngIf="item.old_price !== undefined">$</span> {{item.old_price}} </span>
+                    <span><span class="item-currency">$</span>{{item.price}}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </mat-grid-tile>
+        </ng-container>
+      </mat-grid-list>
+    </div>
+  </div>
+</div>

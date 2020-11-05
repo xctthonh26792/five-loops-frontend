@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api_url: 'http://localhost:23456'
+  // api_url: 'http://apis.fiveloops.net'
 };
 
 /*

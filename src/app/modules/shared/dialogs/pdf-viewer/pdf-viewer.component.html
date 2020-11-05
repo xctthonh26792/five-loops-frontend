@@ -1,0 +1,13 @@
+<form #f="ngForm" autocomplete="off" (ngSubmit)="accept()">
+  <h3 mat-dialog-title>
+    {{ title }}
+    <mat-divider></mat-divider>
+  </h3>
+  <mat-dialog-content fxLayout="column">
+    <ngx-extended-pdf-viewer [src]="furl" useBrowserLocale="true" height="100vh"></ngx-extended-pdf-viewer>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <span class="flex-space"></span>
+    <button mat-raised-button mat-dialog-close color="warn">Đóng</button>
+  </mat-dialog-actions>
+</form>

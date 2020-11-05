@@ -1,0 +1,55 @@
+<div class="product-title">
+  <div class="container">
+    <div class="section-title text-left">
+      <h1>All products</h1>
+    </div>
+    <div class="row"></div>
+  </div>
+</div>
+
+<div class="featured list-item">
+  <div class="container">
+    <div class="featured list-item">
+      <div class="search-product">
+        <div fxLayout="row" fxLayoutGap="10px">
+          <mat-form-field fxFlex>
+            <input type="text" name="search" matInput placeholder="Search product..." [(ngModel)]="query"
+              (keyup.enter)="search(query)" />
+          </mat-form-field>
+          <div fxLayoutAlign="end center">
+            <mat-paginator [pageSizeOptions]="[3, 6, 9, 12]" [length]="total" [pageSize]="quantity"
+              style="background-color: transparent;" showFirstLastButtons>
+            </mat-paginator>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <mat-grid-list cols="3" rowHeight="5:5" gutterSize="25px">
+          <ng-container *ngFor="let item of models">
+            <mat-grid-tile>
+              <div fxLayout="column" fxFill>
+                <div class="item" fxFlex>
+                  <div class="item-image">
+                    <span class="item-label" *ngIf="item.old_price !== undefined">Sale</span>
+                    <a (click)="detail(item.code)">
+                      <img src="{{url}}/{{item.banner}}">
+                    </a>
+                  </div>
+                  <div class="item-info">
+                    <h3>{{item.name}}</h3>
+                    <p class="item-price">
+                      <span class="offprice" *ngIf="item.old_price !== undefined"><span class="item-currency"
+                          *ngIf="item.old_price !== undefined">$</span> {{item.old_price}} </span>
+                      <span><span class="item-currency">$</span>{{item.price}}</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </mat-grid-tile>
+          </ng-container>
+        </mat-grid-list>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="banner">
+  <img class="banner-image" src="assets/images/bannerbest.png">
+  <div class="banner-text">
+    <div class="container">
+      <div class="row">
+        <div fxFlex="70">
+          <div class="banner-content">
+            <h1>FiveLoops</h1>
+            <p>Launch your own App Business with our High-Quality App. #AndroidApp #ReskinService #Graphics #Games
+              &amp; many more will be coming soon</p>
+
+          </div>
+
+          <div class="clearfix"></div>
+          <a class="btn-red" [routerLink]="['/shop']">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="featured list-item">
+  <div class="container">
+    <div class="featured list-item">
+      <div class="container">
+        <div class="section-title text-center">
+          <h1>Featured Items</h1>
+          <p>High-Quality Source Codes &amp; Graphic Assets!</p>
+        </div>
+        <mat-grid-list cols="3" rowHeight="5:5" gutterSize="25px">
+          <ng-container *ngFor="let item of tops">
+            <mat-grid-tile>
+              <div fxLayout="column" fxFill>
+                <div class="item" fxFlex>
+                  <div class="item-image">
+                    <span class="item-label" *ngIf="item.old_price !== undefined">Sale</span>
+                    <a (click)="detail(item.code)">
+                      <img src="{{url}}/{{item.banner}}">
+                    </a>
+                  </div>
+                  <div class="item-info">
+                    <h3>{{item.name}}</h3>
+                    <p class="item-price">
+                      <span class="offprice" *ngIf="item.old_price !== undefined"><span class="item-currency"
+                          *ngIf="item.old_price !== undefined">$</span> {{item.old_price}} </span>
+                      <span><span class="item-currency">$</span>{{item.price}}</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </mat-grid-tile>
+          </ng-container>
+        </mat-grid-list>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="featured list-item">
+  <div class="container">
+    <div class="featured list-item">
+      <div class="container">
+        <div class="section-title text-center">
+          <h1>All Items</h1>
+          <p>High-Quality Source Codes &amp; Graphic Assets!</p>
+        </div>
+        <mat-grid-list cols="3" rowHeight="5:5" gutterSize="25px">
+          <ng-container *ngFor="let item of posts">
+            <mat-grid-tile>
+              <div fxLayout="column" fxFill>
+                <div class="item" fxFlex>
+                  <div class="item-image">
+                    <span class="item-label" *ngIf="item.old_price !== undefined">Sale</span>
+                    <a (click)="detail(item.code)">
+                      <img src="{{url}}/{{item.banner}}">
+                    </a>
+                  </div>
+                  <div class="item-info">
+                    <h3>{{item.name}}</h3>
+                    <p class="item-price">
+                      <span class="offprice" *ngIf="item.old_price !== undefined"><span class="item-currency"
+                          *ngIf="item.old_price !== undefined">$</span> {{item.old_price}} </span>
+                      <span><span class="item-currency">$</span>{{item.price}}</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </mat-grid-tile>
+          </ng-container>
+        </mat-grid-list>
+      </div>
+    </div>
+  </div>
+</div>
