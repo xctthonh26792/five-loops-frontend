@@ -96,7 +96,7 @@ export const MATERIAL_MODULES = [
   MatTooltipModule,
   MatTreeModule,
   GalleryModule,
-  LightboxModule
+  LightboxModule,
 ];
 
 export const MATERIAL_PROVIDERS = [

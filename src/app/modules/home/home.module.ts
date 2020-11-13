@@ -14,6 +14,7 @@ import { DIALOGS } from './dialogs';
 import { RESOLVERS } from './resolvers';
 
 import { routes } from './home.routing';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { routes } from './home.routing';
     SharedModule,
     HttpClientModule,
     RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+    MatCarouselModule.forRoot(),
     NgxMaskModule.forChild(),
     NgxSummernoteModule.forChild()
   ],

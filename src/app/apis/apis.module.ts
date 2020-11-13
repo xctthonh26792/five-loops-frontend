@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PostApi } from './post.api';
 import { PrivacyApi } from './privacy.api';
 import { FeedbackApi } from './feedback.api';
+import { BannerApi } from './banner.api';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ export class ApisModule {
       providers: [
         PostApi,
         PrivacyApi,
-        FeedbackApi
+        FeedbackApi,
+        BannerApi
       ]
     };
   }

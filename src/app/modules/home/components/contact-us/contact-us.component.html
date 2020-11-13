@@ -1,14 +1,6 @@
 <form #f="ngForm" autocomplete="off" (ngSubmit)="accept(f)">
-  <div class="product-title">
-    <div class="container">
-      <div class="section-title text-left">
-        <h1>Contact us</h1>
-      </div>
-      <div class="row"></div>
-    </div>
-  </div>
-  <div class="tenjin-container">
-    <div class="container border-10 bg-fff" style="padding-top:30px;padding-bottom: 30px;">
+  <div class="container" style="padding-top:50px;">
+    <div class=" container border-10 bg-fff" style="padding-top:30px;padding-bottom: 30px;">
       <div class="container" fxLayout="column" fxLayoutGap="10px">
         <div fxLayout="row" fxLayoutGap="10px">
           <p-text name="name" [(ngModel)]="model.name" placeholder="Your name" required fxFlex></p-text>
@@ -17,7 +9,7 @@
         </div>
         <div fxFlex>
           <p-editor name="message" [(ngModel)]="model.message" placeholder="Your message" fxFlex required
-            [height]="'350px'"></p-editor>
+            [height]="'420px'"></p-editor>
         </div>
         <div fxLayout="row" fxLayoutAlign="end space-around" class="button-padding">
           <span class="flex-space"></span>

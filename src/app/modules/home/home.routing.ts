@@ -11,6 +11,7 @@ import {
 } from './components';
 
 import {
+  BannerResolve,
   HomeResolve,
   PostResolve,
   PrivacyDataResolve,
@@ -29,7 +30,7 @@ export const routes: Routes = [
       {
         path: '',
         component: PostComponent,
-        resolve: { posts: HomeResolve, tops: TopProductResolve }
+        resolve: { posts: HomeResolve, tops: TopProductResolve, banners: BannerResolve }
       },
       {
         path: 'detail/:path',

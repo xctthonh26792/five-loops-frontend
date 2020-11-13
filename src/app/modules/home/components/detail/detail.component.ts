@@ -25,6 +25,7 @@ export class DetailComponent {
       this.data = _.get(route.snapshot.data, 'data')
       this.tops = _.get(route.snapshot.data, 'tops')
     })
+    console.log(this.data)
   }
 
   data: any;

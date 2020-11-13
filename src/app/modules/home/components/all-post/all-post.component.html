@@ -1,13 +1,13 @@
-<div class="product-title">
+<!-- <div class="product-title">
   <div class="container">
     <div class="section-title text-left">
       <h1>All products</h1>
     </div>
     <div class="row"></div>
   </div>
-</div>
+</div> -->
 
-<div class="featured list-item">
+<div class="featured list-item" style="padding-top:70px;">
   <div class="container">
     <div class="featured list-item">
       <div class="search-product">
@@ -24,30 +24,26 @@
         </div>
       </div>
       <div class="container">
-        <mat-grid-list cols="3" rowHeight="5:5" gutterSize="25px">
-          <ng-container *ngFor="let item of models">
-            <mat-grid-tile>
-              <div fxLayout="column" fxFill>
-                <div class="item" fxFlex>
-                  <div class="item-image">
-                    <span class="item-label" *ngIf="item.old_price !== undefined">Sale</span>
-                    <a (click)="detail(item.code)">
-                      <img src="{{url}}/{{item.banner}}">
-                    </a>
-                  </div>
-                  <div class="item-info">
-                    <h3>{{item.name}}</h3>
-                    <p class="item-price">
-                      <span class="offprice" *ngIf="item.old_price !== undefined"><span class="item-currency"
-                          *ngIf="item.old_price !== undefined">$</span> {{item.old_price}} </span>
-                      <span><span class="item-currency">$</span>{{item.price}}</span>
-                    </p>
-                  </div>
+        <ul class="row list-item">
+          <li class="col-md-4" fxLayout="row" *ngFor="let item of models">
+            <div class="item">
+              <div class="item-image">
+                <img src="{{url}}/{{item.banner}}" (click)=" detail(item.code)">
+                <div class="item-label">
+                  <span class="item-badge android" *ngIf="item.is_android"></span>
+                  <span class="item-badge unity" *ngIf="item.is_unity"></span>
+                  <span class="item-badge admob" *ngIf="item.is_admob"></span>
                 </div>
               </div>
-            </mat-grid-tile>
-          </ng-container>
-        </mat-grid-list>
+              <div class="item-info">
+                <h3>{{ item.name }}</h3>
+              </div>
+              <div class="item-action">
+                <a (click)=" detail(item.id)" class="button button-red item-button">${{item.price}}</a>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
 

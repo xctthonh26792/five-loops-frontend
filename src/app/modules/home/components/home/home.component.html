@@ -1,45 +1,48 @@
 <section class="main-container" fxFlexFill>
-  <!-- <button onclick="topFunction()" id="backTop" title="Go to top">Top</button> -->
-  <!-- Header Start -->
-  <header class="site-header ">
+  <header class="header">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-xl-2 col-md-3">
-          <div class="logo">
-            <a [routerLink]="['']" class="custom-logo-link" rel="home"><img src="assets/images/5loop_logo.png"
-                class="custom-logo jetpack-lazy-image jetpack-lazy-image--handled"
-                alt="Buy Android Apps &amp; Games Source Code – Reskin Services" data-lazy-loaded="1" width="256"
-                height="90"></a>
-          </div>
+      <div class="row">
+        <div class="col-md-3">
+          <a [routerLink]="['/']" class="custom-logo-link" rel="home"><img src="assets/images/5loop_logo.png"
+              class="custom-logo jetpack-lazy-image jetpack-lazy-image--handled"
+              alt="Buy Android Apps &amp; Games Source Code – Reskin Services" data-lazy-loaded="1" width="256"
+              height="90"></a>
         </div>
-        <div class="col-xl-10 col-md-9">
-          <div class="primary-menu d-none d-lg-inline-block float-right">
-            <nav class="desktop-menu">
-              <ul id="menu-menu-chinh" class="menu">
-                <li id="menu-item-2517"
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-70 current_page_item menu-item-2517">
-                  <a [routerLink]="['']" aria-current="page">Home</a></li>
-                <li id="menu-item-2518" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2518">
-                  <a [routerLink]="['/shop']">App Templates</a></li>
-                <li id="menu-item-2855" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2855">
-                  <a [routerLink]="['/pricing-plan']">Reskin &amp; Design</a></li>
-                <li id="menu-item-2825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2825">
-                  <a [routerLink]="['/privacy']">Privacy policy</a></li>
-                <li id="menu-item-2825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2825">
-                  <a [routerLink]="['/term-of-service']">Term &amp; condition</a></li>
-                <li id="menu-item-2827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2827">
-                  <a [routerLink]="['/contact-us']">Contact us</a></li>
-              </ul>
-            </nav>
-          </div>
+        <div class="col-md-9 text-right">
+          <ul class="header-list">
+            <li class="search">
+              <form class="search-form">
+                <input class="search-input" type="text" value="" name="" placeholder="Search...">
+                <button class="search-button"><i class="fa fa-search"></i></button>
+              </form>
+            </li>
+            <li><a class="button button-red contact-top" [routerLink]="['/contact-us']">Contact Us</a></li>
+          </ul>
         </div>
       </div>
     </div>
   </header>
-  <!-- Banner START -->
-
 
   <section class="main-container" fxFlexFill>
     <router-outlet></router-outlet>
   </section>
-</section>
+
+  <footer class="footer">
+    <div class="container">
+      <!-- Get Copyright Text -->
+      <div class="row">
+        <div class="col-md-4 offset-md-1 copy-right">
+          <a href="http://www.5loops.net">
+            <div class="mcg-logo"></div>
+          </a>Bản quyền © 2020 thuộc về <strong><a href="http://www.5loops/net">Five Loops Team</a></strong>. <br> Email
+          <strong></strong> fiveloops@outlook.com
+        </div>
+        <div class="col-md-4 offset-md-2 other-link">
+          <ul class="list-link">
+            <li><a [routerLink]="['/privacy']">Privacy Policy</a></li>
+            <li><a [routerLink]="['/term-of-service']">Term & condition</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
